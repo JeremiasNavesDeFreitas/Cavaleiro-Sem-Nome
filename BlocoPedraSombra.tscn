@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Pedregulho com sombra.png" type="Texture" id=1]
+
+[node name="BlocoPedraSombra" type="Node2D"]
+
+[node name="PedregulhoDark " type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+centered = false

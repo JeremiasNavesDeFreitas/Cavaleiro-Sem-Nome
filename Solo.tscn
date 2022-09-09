@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Chão.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 256, 256 )
+
+[node name="Solo" type="Node2D"]
+
+[node name="Bloco de Grama" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bloco de Grama"]
+position = Vector2( 256, 256 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bloco de Grama/StaticBody2D"]
+shape = SubResource( 1 )

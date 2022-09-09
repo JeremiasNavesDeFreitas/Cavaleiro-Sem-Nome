@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Bloco de Grama.tres" type="TileSet" id=1]
+[ext_resource path="res://Cavaleiro.png" type="Texture" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://terra.tres" type="TileSet" id=4]
+[ext_resource path="res://Placa.png" type="Texture" id=5]
+[ext_resource path="res://pedregulho_dark.tres" type="TileSet" id=6]
+[ext_resource path="res://pedregulho.tres" type="TileSet" id=7]
+[ext_resource path="res://pedregulho_quebrado.tres" type="TileSet" id=8]
+[ext_resource path="res://Easter Doom.png" type="Texture" id=9]
+[ext_resource path="res://Cavaleiro All Sprites/Cavaleiro Walk.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Andando",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 227.555, 303.407 )
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Placa" type="Sprite" parent="."]
+position = Vector2( 240, 480 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="Bloco de Grama" type="TileMap" parent="."]
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 2097312, 0, 0, 3145856, 0, 0, 3145872, 0, 0, 4194304, 0, 0, 4194320, 0, 0, 4194336, 0, 0, 4194352, 0, 0, 4194368, 0, 0, 4194384, 0, 0, 4194400, 0, 0, 4194416, 0, 0 )
+
+[node name="Pedregulho" type="TileMap" parent="."]
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 7 )
+format = 1
+tile_data = PoolIntArray( -327688, 0, 0, 131056, 0, 0, 196600, 0, 0, 589809, 0, 0, 720872, 0, 0, 720873, 0, 0, 1114081, 0, 0, 1572826, 0, 0, 2097106, 0, 0, 2097114, 0, 0 )
+
+[node name="Borda Pedregulho" type="TileMap" parent="."]
+position = Vector2( -1112, -232 )
+rotation = -1.58818
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 8 )
+format = 1
+tile_data = PoolIntArray( 1572818, 0, 0, 2031577, 0, 0, 2490335, 0, 0, 3014630, 0, 0, 3080167, 0, 0, 3538926, 0, 0 )
+
+[node name="Pedregulho Dark" type="TileMap" parent="."]
+position = Vector2( 248, 456 )
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 6 )
+format = 1
+tile_data = PoolIntArray( -1179672, 0, 0, -786471, 0, 0, -786463, 0, 0, -786456, 0, 0, -262191, 0, 0, -262183, 0, 0, -262175, 0, 0, -262168, 0, 0, 262097, 0, 0, 262105, 0, 0, 262113, 0, 0, 262121, 0, 0 )
+
+[node name="Terra" type="TileMap" parent="."]
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( 1572944, 0, 0, 1900624, 0, 0, 2162632, 0, 0, 2162640, 0, 0, 2162648, 0, 0, 2162656, 0, 0, 2162664, 0, 0, 2162672, 0, 0, 2162680, 0, 0, 2162681, 0, 0, 2097216, 0, 0, 2097224, 0, 0, 2228304, 0, 0, 2359289, 0, 0, 2293824, 0, 0, 2490312, 0, 0, 2490320, 0, 0, 2490328, 0, 0, 2490336, 0, 0, 2490344, 0, 0, 2490352, 0, 0, 2490360, 0, 0, 2424904, 0, 0, 2555984, 0, 0, 2621440, 0, 0, 2621448, 0, 0, 2621456, 0, 0, 2621464, 0, 0, 2621472, 0, 0, 2621480, 0, 0, 2621488, 0, 0, 2621496, 0, 0, 2621504, 0, 0, 2817992, 0, 0, 2818000, 0, 0, 2818008, 0, 0, 2818016, 0, 0, 2818024, 0, 0, 2818032, 0, 0, 2818040, 0, 0, 2752584, 0, 0, 2883664, 0, 0, 2949120, 0, 0, 2949128, 0, 0, 2949136, 0, 0, 2949144, 0, 0, 2949152, 0, 0, 2949160, 0, 0, 2949168, 0, 0, 2949176, 0, 0, 2949184, 0, 0, 3145672, 0, 0, 3145680, 0, 0, 3145688, 0, 0, 3145696, 0, 0, 3145704, 0, 0, 3145712, 0, 0, 3145720, 0, 0, 3080264, 0, 0 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 560, 320 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 3 )
+animation = "Jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2( 0.210938, 0.210938 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="Objetos" type="Node" parent="."]
+
+[node name="Báu" type="Sprite" parent="Objetos"]
+
+[node name="Easter Doom" type="Sprite" parent="Objetos"]
+position = Vector2( -848, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+centered = false
